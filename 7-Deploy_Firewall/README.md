@@ -83,11 +83,17 @@ az network firewall network-rule create --collection-name net-rule1 --destinatio
 ```
 
 **7 - Configure DNAT rule**
+ - Source * to Firewall Public IP translate to WorkLoad-IP on port 3389
 
+```ps
+az network firewall nat-rule create -n RDB_DNAT --firewall-name myfirewall -g langocanh --collection-name dnat-rule1 --protocols TCP --source-addresses '*' --dest-addr 52.229.200.132 --destination-ports 3389 --translated-address 10.0.2.4 --translated-port 3389 --action Dnat
+
+```
 
 **7 - Test firewall connections**
 
 Connect RDP to Workload-VM and test :))
+- Enable diagnostic settings and queries for logs 
 ```ps
  mstsc /v:Srv-Work
 ```
@@ -104,3 +110,17 @@ Invoke-WebRequest -Uri https://www.google.com
 Invoke-WebRequest -Uri https://www.microsoft.com
 Invoke-WebRequest -Uri https://www.microsoft.com
 ```
+
+1. Remote RDP into Workload-VM through Firewall public IP  **Azure Firewall logs data**
+pic ..
+
+**LOGS**
+
+
+2. NSlookup for DNS 
+
+**LOGS**
+
+3. Website access
+
+**LOGS**
