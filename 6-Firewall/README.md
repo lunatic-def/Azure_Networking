@@ -124,3 +124,14 @@ pic ..
 3. Website access
 
 **LOGS**
+
+
+
+
+Logs reference: 
+Link : Azure Diagnostics 
+Azure Networking
+https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-network-azurefirewalls-logs
+
+Firewall
+https://learn.microsoft.com/en-us/azure/azure-monitor/reference/queries/azurediagnostics#queries-for-microsoftnetwork
